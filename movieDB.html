@@ -7,7 +7,7 @@
     <title>영화검색</title>
     <link rel="stylesheet" href="style.css">
 
-    <script src="DB.js"></script>
+    
 </head>
 
 <body>
@@ -15,19 +15,14 @@
 
     <form class="form" action="">
         <label for="floatingInput">영화 검색 :</label>
-        <input class="form-control" id="floatingInput" placeholder="영화 제목을 검색해 보세요">
-        <button type="button" class="btn btn-outline-danger">검색</button>
+        <input class="form-control" id="search-input" placeholder="영화 제목을 검색해 보세요">
+        <button id="search-button" type="button" class="btn">검색</button>
     </form>
 
-    <section class="myCard">
-        <div id="card">
-            <img src="" alt="영화 이미지">
-            <h3>영화 제목</h3>
-            <p>줄거리요약</p>
-            <p>평점 : 9.1</p>
-        </div>
-    </section>
+    <div id="movie-container"></div>
 
+
+    <script src="DB.js"></script>
 
 
 </body>

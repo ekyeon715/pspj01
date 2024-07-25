@@ -1,34 +1,3 @@
-// // 영화 정보 카드리스트 UI
-// function createMovieCard(movie) {
-//     const card = document.createElement('div');
-//     card.className = 'movie-card';
-//     card.innerHTML = `
-// <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
-// <h3>${movie.title}</h3>
-// <p>${movie.overview}</p>
-// <span>Rating: ${movie.vote_average}</span>
-// `;
-//     card.addEventListener('click', () => alert(`Movie ID: ${movie.id}`));
-//     return card;
-// }
-
-
-
-// // 영화 검색 UI
-// document.getElementById('search-button').addEventListener('click', () => {
-//     const query = document.getElementById('search-input').value.toLowerCase();
-//     const movieCards = document.querySelectorAll('.movie-card');
-//     movieCards.forEach(card => {
-//         const title = card.querySelector('h3').textContent.toLowerCase();
-//         if (title.includes(query)) {
-//             card.style.display = 'block';
-//         } else {
-//             card.style.display = 'none';
-//         }
-//     });
-// });
-
-
 // API
 const options = {
     method: 'GET',
@@ -44,16 +13,53 @@ const options = {
     .catch(err => console.error(err));
 
 
-    let temp_html = `
-    <div class="col">
-        <div class="card">
-            <img src="${backdrop_path}"
-                class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">${original_title}</h5>
-                <p class="card-text">${overview}</p>
-                <p class="card-text">${vote_average}</p>
-            </div>
-        </div>
-    </div>`;
-    $('#card').append(temp_html);
+
+
+
+// 영화 정보 카드리스트 UI
+function createMovieCard(movie) {
+    const card = document.createElement('div');
+    card.className = 'movie-card';
+    card.innerHTML = `
+<img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
+<h2>${movie.title}</h2>
+<p>${movie.overview}</p>
+<span>Rating: ${movie.vote_average}</span>
+`;
+    card.addEventListener('click', () => alert(`Movie ID: ${movie.id}`));
+    return card;
+}
+
+fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1')
+  .then(response => response.json())
+  .then(data => {
+    const movies = data.results;
+    const movieContainer = document.getElementById('movie-container');
+    movies.forEach(movie => {
+      const card = createMovieCard(movie);
+      movieContainer.appendChild(card);
+    });
+  })
+  .catch(error => console.error('Error:', error));
+
+
+
+
+
+// 영화 검색 UI
+document.getElementById('search-button').addEventListener('click', () => {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    const movieCards = document.querySelectorAll('.movie-card');
+    movieCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        if (title.includes(query)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+});
+
+
+
+

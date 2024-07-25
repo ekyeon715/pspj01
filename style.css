@@ -1,9 +1,45 @@
+@font-face {
+    font-family: 'SunBatang-Light';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/SunBatang-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F2D5DB;
+}
+
+
 .header {
     background-color: #F29BA2;
     height: 150px;
     font-size: 50px;
     text-align: center;
     line-height: 140px;
+    font-family: 'SBAggroB';
+    font-weight: bold;
+
 }
 
 .form {
@@ -11,13 +47,46 @@
     height: 75px;
     text-align: center;
     line-height: 70px;
+    font-family: 'SBAggroB';
 }
 
-body {
-    background-color: #F2D5DB;
+.form-control {
+    width: 16%;
+    height: 2em;
+    border-radius: 10px;
+    border: 1px solid #979797;
+    font-family: 'SBAggroB';
+    font-weight: 10;
 }
 
-.mycards {
-    width: 1200px;
+.btn {
+    background-color: #B4D9C4;
+    border: #979797;
+    width: 3.5em;
+    height: 2em;
+    font-size: 15px;
+    font-weight: normal;
+    color: black;
+    border-radius: 10px;
+    font-family: 'SBAggroB';
+}
+
+div {}
+
+.movie-card {
+    width: 600px;
     margin: 20px auto 20px auto;
+    background-color: #B4D9C4;
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 35px;
+    padding-bottom: 20px;
+    font-family: 'SunBatang-Light';
+
+}
+
+#movie-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
 }
