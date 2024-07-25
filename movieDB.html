@@ -7,19 +7,27 @@
     <title>영화검색</title>
     <link rel="stylesheet" href="style.css">
 
-    <script>"./DB.js"</script>
+    <script src="DB.js"></script>
 </head>
 
 <body>
-    <header>영화DB</header>
+    <header class="header">영화DB</header>
 
-    <div class="searchBar">
-        <label for="floatingInput">영화 제목 :</label>
+    <form class="form" action="">
+        <label for="floatingInput">영화 검색 :</label>
         <input class="form-control" id="floatingInput" placeholder="영화 제목을 검색해 보세요">
         <button type="button" class="btn btn-outline-danger">검색</button>
-    </div>
+    </form>
 
-    <div id="movie-container"></div>
+    <section class="myCard">
+        <div id="card">
+            <img src="" alt="영화 이미지">
+            <h3>영화 제목</h3>
+            <p>줄거리요약</p>
+            <p>평점 : 9.1</p>
+        </div>
+    </section>
+
 
 
 </body>

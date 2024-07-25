@@ -1,0 +1,23 @@
+.header {
+    background-color: #F29BA2;
+    height: 150px;
+    font-size: 50px;
+    text-align: center;
+    line-height: 140px;
+}
+
+.form {
+    background-color: #F28095;
+    height: 75px;
+    text-align: center;
+    line-height: 70px;
+}
+
+body {
+    background-color: #F2D5DB;
+}
+
+.mycards {
+    width: 1200px;
+    margin: 20px auto 20px auto;
+}
